@@ -448,7 +448,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_introduction">1. Introduction</a></li>
 <li><a href="#_requirements">2. Requirements</a></li>
 <li><a href="#_prerequisites">3. Prerequisites</a></li>
-<li><a href="#_document_history">4. Document History</a></li>
+<li><a href="#_folder_file_structure">4. Folder / File Structure</a></li>
+<li><a href="#_oder_txt_file">5. oder.txt file</a></li>
+<li><a href="#_web_site">6. Web site</a></li>
+<li><a href="#_document_history">7. Document History</a></li>
 </ul>
 </div>
 </div>
@@ -458,6 +461,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Over the years I have tinkered with the idea of using ASCIIDoctor documents as the basis for a blog service.
 The Blog would be statically delivered and as damn simple as possible.</p>
+</div>
+<div class="paragraph">
+<p>A PDF version of this document is available at this <a href="./readme.pdf" target="_blank" rel="noopener">Link</a></p>
 </div>
 </div>
 </div>
@@ -570,10 +576,50 @@ The Blog would be statically delivered and as damn simple as possible.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>&gt;&gt;&gt;&gt;&gt;
-== Web site</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_folder_file_structure">4. Folder / File Structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here is a diagram of the required file structure for ADOC2Blog to work.</p>
+</div>
+<div class="paragraph">
+<p>Each Blog Article folder is <code>Atomic</code> which means all of the assets for that article are in the folder.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="./images/adoc2blog-structure.png" alt="Folder / File Structure">
+</div>
+<div class="title">Figure 1. Folder / File Structure</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_oder_txt_file">5. oder.txt file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a simple text file with the names of the Blog Article folders to be included in the generated Blog Article web site.</p>
+</div>
+<div class="paragraph">
+<p>Folders not listed here will <strong>NOT</strong> be in the generated web site.</p>
+</div>
+<div class="paragraph">
+<p>Folders staring with an * will be hidden and will <strong>NOT</strong> be in the generated web site.
+In this example <code>New dog grooming methods</code> will not be in the generated web site</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="./images/order-txt.png" alt="Example `order.txt` file">
+</div>
+<div class="title">Figure 2. Example <code>order.txt</code> file</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_web_site">6. Web site</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The web site will be generated based on the layout in the <code>index.adoc</code> template.
 This template can be modified for the page scaffolding.
@@ -583,13 +629,13 @@ Additional content or directions could be added.</p>
 <div class="content">
 <img src="./images/web-example.png" alt="Blog Article Web Page Example">
 </div>
-<div class="title">Figure 1. Blog Article Web Page Example</div>
+<div class="title">Figure 3. Blog Article Web Page Example</div>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_document_history">4. Document History</h2>
+<h2 id="_document_history">7. Document History</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Document History</caption>
@@ -622,7 +668,7 @@ Additional content or directions could be added.</p>
 <div id="footer">
 <div id="footer-text">
 Version 2.1b<br>
-Last updated 2019-07-19 14:35:02 -0400
+Last updated 2019-07-19 15:07:02 -0400
 </div>
 </div>
 </body>

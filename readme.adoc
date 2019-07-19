@@ -21,6 +21,8 @@ v2.1b, 07/19/2019: Doco Type
 Over the years I have tinkered with the idea of using ASCIIDoctor documents as the basis for a blog service.
 The Blog would be statically delivered and as damn simple as possible.
 
+A PDF version of this document is available at this link:./readme.pdf[Link, window="_blank"]
+
 == Introduction
 
 I use ASCIIDoctor to do the majority of my documentation and have gotten good at it with special editor extension and snippets.
@@ -59,7 +61,34 @@ These are the requirements for a basic utility to manage ASCIIDoctor files speci
 * Node FTPSync - To manage transfer of generated updates
 
 
->>>>>
+== Folder / File Structure
+
+Here is a diagram of the required file structure for ADOC2Blog to work.
+
+Each Blog Article folder is `Atomic` which means all of the assets for that article are in the folder.
+
+.Folder / File Structure
+image::adoc2blog-structure.png[Folder / File Structure, align='center']
+ 
+== oder.txt file
+
+This is a simple text file with the names of the Blog Article folders to be included in the generated Blog Article web site.
+
+Folders not listed here will *NOT* be in the generated web site.
+
+Folders staring with an * will be hidden and will *NOT* be in the generated web site.
+In this example `New dog grooming methods` will not be in the generated web site
+
+.Example `order.txt` file   
+image::order-txt.png[Example `order.txt` file, align='center'] 
+
+
+ 
+
+
+
+<<<<
+
 == Web site 
 
 The web site will be generated based on the layout in the `index.adoc` template.

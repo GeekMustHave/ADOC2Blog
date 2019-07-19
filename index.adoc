@@ -52,8 +52,7 @@ link:./Easier%20Tech%20Writing/readme.html/readme.html[View, window="_blank"] li
 //
 // --- Install HTTPServer Node
 //
-| image:./Install%20HTTPServer%20Node/r
-eadme.png[, 133, 133, link="./Install%20HTTPServer%20Node/readme.html" window="_blank"] | *Install HTTPServer Node*+++<br>+++
+| image:./Install%20HTTPServer%20Node/readme.png[, 133, 133, link="./Install%20HTTPServer%20Node/readme.html" window="_blank"] | *Install HTTPServer Node*+++<br>+++
 +++<b>+++Date: +++</b>+++ 04/15/2018 - At some point in time you are going to need a HTTP server to test your JavaScript code.
 This method shows how to do this using either Python or Node.+++<br>+++
 link:./Install%20HTTPServer%20Node/readme.html[View, window="_blank"]  link:./Install%20HTTPServer%20Node/readme.pdf[Download, window="_blank"]  

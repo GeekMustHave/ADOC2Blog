@@ -1,0 +1,29 @@
+{
+  "name": "adoc2blog",
+  "version": "1.0.0",
+  "description": "ASCIIDoctor to Blog Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeekMustHave/ADOC2Blog.git"
+  },
+  "keywords": [
+    "ASCIIDoctor",
+    "Blog",
+    "Generator"
+  ],
+  "author": "GeekMustHave",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeekMustHave/ADOC2Blog/issues"
+  },
+  "homepage": "https://github.com/GeekMustHave/ADOC2Blog#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "figlet": "^1.2.3"
+  }
+}

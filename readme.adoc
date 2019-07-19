@@ -16,12 +16,47 @@ v2.1b, 07/19/2019: Doco Type
 :github: https://github.com/GeekMustHave/Github repository
 :linkattrs:
 :seclinks:
-:title-logo-image: ./images/create-doco_gmh-blogArticle-cover.png
+:title-logo-image: ./images/create-doco_gmh-standard-cover.png
 
-Preamble paragraph goes here
+Over the years I have tinkered with the idea of using ASCIIDoctor documents as the basis for a blog service.
+The Blog would be statically delivered and as damn simple as possible.
 
 == Introduction
 
+I use ASCIIDoctor to do the majority of my documentation and have gotten good at it with special editor extension and snippets.
+
+I have looked at a number of Open source solutions and most of them are either too complex or difficult to implement.
+
+* Hugo - Based on `Go` and a defined file structure that doesn't allow the article to exist in a directory atomically.
+* Gatsby - Difficult to install and is geared more towards document repository
+* Antora.org - Requires GIT repositories to create a document site generator, too many unneeded features
+* Vue based - Flexible but used GraphQL for access to even the filesystem, ASCIIDoc not mentioned
+
+== Requirements
+
+These are the requirements for a basic utility to manage ASCIIDoctor files specifically and generate a blog automatically
+
+* Use Blog articles as separate directories
+* Use ASCIIDoctor as the primary files for articles
+* Use the content of the ASCIIDoctor file to drive the indexing
+** The (=) title becomes the tile of the article
+** The preamble (The first paragraph of the document)
+** Date from the date line of the header
+* index.html generated from index.adoc to all for template of index to be changed
+* Blog order article is determined by a single text file in roo `order.txt` with a list of the directory name in the order they should appear in the blog
+** Delete an article by (*) it in the `'order.txt`
+* Use a FTPSync command to help move (New/Updated) generated content into web server
+* Auto generate HTML & PDF if the coersponding ADOC is more than 1 day old
+* Auto generate (Optional) the `order.txt` file of the sub-folder of the blog
+
+
+== Prerequisites
+
+* Definition of Blog article file naming
+** readme.adoc for main document
+** readme.png (Optional) for Blog article image
+** ALl sub-directories in Blog article directory will be transferred except for `.exclude` folder
+* Node FTPSync - To manage transfer of generated updates
 
 
 

@@ -1,0 +1,20 @@
+= GeekMustHave Blog Articles
+GeekMustHave <geek.musthave@PhoenixWorkgroup.com>
+v2.1b, 07/19/2019: Doco Type
+:Author: John HR Schuster
+:Company: Phoenix Learning Labs
+:toc: left
+:toclevels: 4:
+:imagesdir: ./images
+:pagenums:
+:numbered: 
+:chapter-label: 
+:experimental:
+:source-hightlighter: coderay
+:icons: font
+:docdir: */documents
+:github: https://github.com/GeekMustHave/Github repository
+:linkattrs:
+:seclinks:
+:title-logo-image: ./images/create-doco_gmh-standard-cover.png
+

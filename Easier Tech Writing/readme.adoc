@@ -1,0 +1,146 @@
+= Writing Documentation Easier pass:q[<br>] Getting Started with ASCIIDoctor
+GeekMustHave <Geek.MustHave@Phoenixworkgroup.com>
+V2.1e, 08/14/2017: Windows Installation ADOC Sample
+:toc: left
+:toclevels: 4:
+:imagesdir: ./images
+:pagenums:
+:experimental:
+:source-hightlighter: highlight.js
+:icons: font
+
+////
+pass:q[<br>] - Pass-through a HTML command, <br> line feed
+toc - Table of Contents, HTML display on left of page
+        on PDF include as page after title page
+toclevels: 4 - By default only 2 levels shown, this makes it show all 4 levels we have in this document        
+imagesdir - About where this adoc file, where are the image files held
+pagenums - Provide page numbers for PDF generated documents
+experimental - Used to allow keyboard shortcuts like kdb:[ctrl + C]
+source-highlighter - Which lib to use, highlight.js doesn't require any install, uses CDN 
+icons - Allow for nice annotations
+////
+
+ASCIIDoctor is a markdown languages.
+It has a very extenisve syntax allowing for better technical writing.
+This file is an example of some of that syntax.
+There are links at the end of the document for more detailed references to this markdown.
+
+== History
+
+This is the history of revisions to this document
+
+.Document History
+[ cols="2,1,1,5" options="header"]
+|===
+| Date | Version | Author | Description
+| 08/14/2017 | 2.1e | JHRS | Added GMH details at end, changed name of file 
+                            to more WGET friendly
+| 08/13/2017 | 2.1d | JHRS | Updated for advanced users wanted a fuller ADOC test file
+| 07/25/2017 | 2.1c | JHRS | Changed for tutorial testing
+| 07/21/2017 | 2.1b | JHRS | Initial version of document
+|===
+
+== Overview
+
+Technical writing with markdown requires the mastery of a **Text-Editor**, not a word processor.
+You must surrender from the the WYSIWYG and move on to writing content and leeting ther format just happen.
+
+== Toolchain
+
+A toolchain is a set of utilities that perform a process.
+The ASCIIDoctor toolchain is very simple to start Edit-Generate-View-Repeat.
+
+Some toolchains are more complex with File Transfers of HTML files to web sites and version control using GIT an GitHub.
+
+.Component Dowload links
+https://github.com/oneclick/rubyinstaller2/releases/download/2.4.1-2/rubyinstaller-2.4.1-2-x64.exe[ Ruby Installer]
+
+https://pwc-lms.com/GeekMustHave/Articles/GMH-056%20_EasierTechnicalWriting%20_Markdown_ASCIIDoctor-Windows%20INstallation.adoc[ This ADOC file]
+
+https://github.com/git-for-windows/git/releases/download/v2.14.1.windows.1/Git-2.14.1-64-bit.exe[ GIT Windows]
+
+https://go.microsoft.com/fwlink/?Linkid=852157[ Microsoft Code Editor]
+
+https://github.com/asciidoctor/asciidoctor-chrome-extension/releases/download/v1.5.4.100/asciidoctor-chrome-extension.nex[ Chrome ASCIIDoctor Live preview]
+
+https://github.com/asciidocfx/AsciidocFX/releases/download/v1.5.5/AsciidocFX_Windows_No_JRE.exe[ ASCIIDocFX Editor]
+
+https://www.youtube.com/watch?v=2goMtz_vdtM&feature=youtu.be[ Writing Books with ASCCDoc FX - YouTube video]
+
+Some of the utilities (Components) are shown below
+
+=== Minimum Components
+
+* Ruby
+* GEM
+* ASCIIDoctor
+* ASCIIDoctor-PDF (Pre-production)
+
+=== Option components
+* Chrome - ASCIIDoctor.js Preview add-on
+* Firefox - ASCIIDoctor.JS live preview add-on
+* Editor - My Choice VS Code
+* VS Code plugins
+* VS Code Highlighting control for ASCIIDoctor
+* VS Live Preview
+* VS Spellchecker
+
+=== Version control
+
+* GIT version control
+* GIT in VS Code
+* Powershell
+* PS scipts for Document management
+* PS within VSCode
+
+== GEM Installation of the basic ASCIIDocotr
+
+After Ruby and GEM are installed you can install the basic ASCIIDoctor by running
+
+ gem install ASCIIDoctor
+
+To get the PDF component (Pre-Production) you will need to run
+
+ gem install asciidoctor-pdf --pre 
+
+NOTE: The --pre is necessary or the GEM install will fail
+ 
+== Microsoft Powershell
+
+This is the replacement for the old command line `CMD`.
+Powershell supports many of the old `CMD` commands but, it's power comes from the new commands it has.
+
+== Microsoft Code Editor
+
+This is an excellent editor to use for Technical wriring.
+There are extensions to help do synta highlighting and live HTML viewing.
+Code also has an integrated Powershell window allowing your to run your Writing toolchain.
+
+
+== ASCIIDoctor syntax references.
+
+. https://leanpub.com/awesomeasciidoctornotebook/[ ASCIIDoc cheatsheet, By Powerman]
+. http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[ ASCIIDoc Syntax Quick Reference]
+. https://www.evernote.com/Home.action#n=2c0304b6-241d-489f-b5ef-a72fa097b535&ses=4&sh=2&sds=5&[ Awsome ASCIIDoctor Notebook, by (mrhaki)]
+. http://asciidoctor.org/docs/asciidoc-writers-guide/[ ASCIIDoctors Writer Guide]
+. http://asciidoc.org/[ ASCIIDoc Home page (Pre-ASCIIDoctor)]
+
+
+
+== GeekMustHave
+
+GeekMustHave is a **Maker**, I build things, I help others to understand how to build things.
+
+Visit my https://geekmusthave.com[ blog] for more goodies.
+
+Please consider **Subscribing** to my https://www.youtube.com/channel/UChNSlqKgG8_l0h0C8vRLvbA[ YouTube Channel] to let me know if this has been helpful.
+
+Your support is greatly appreciated.
+
+
+
+
+
+
+

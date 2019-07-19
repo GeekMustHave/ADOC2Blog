@@ -5,8 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<meta name="author" content="John HR Schuster">
-<title>ASCIIDoctor to Blog Utility</title>
+<title>GeekMustHave Blog Articles</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -432,197 +431,79 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>ASCIIDoctor to Blog Utility</h1>
-<div class="details">
-<span id="author" class="author">John HR Schuster</span><br>
-<span id="email" class="email"><a href="mailto:John.schuster@PhoenixWorkgroup.com">John.schuster@PhoenixWorkgroup.com</a></span><br>
-<span id="revnumber">version 2.1b,</span>
-<span id="revdate">07/19/2019</span>
-<br><span id="revremark">Doco Type</span>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_introduction">1. Introduction</a></li>
-<li><a href="#_requirements">2. Requirements</a></li>
-<li><a href="#_prerequisites">3. Prerequisites</a></li>
-<li><a href="#_document_history">4. Document History</a></li>
-</ul>
-</div>
+<h1>GeekMustHave Blog Articles</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph">
-<p>Over the years I have tinkered with the idea of using ASCIIDoctor documents as the basis for a blog service.
-The Blog would be statically delivered and as damn simple as possible.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_introduction">1. Introduction</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>I use ASCIIDoctor to do the majority of my documentation and have gotten good at it with special editor extension and snippets.</p>
+<p>Welcome the GeekMustHave Blog articles.  These are articles that were either too long or complicated to be done using the WordPress platform.</p>
 </div>
 <div class="paragraph">
-<p>I have looked at a number of Open source solutions and most of them are either too complex or difficult to implement.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Hugo - Based on <code>Go</code> and a defined file structure that doesn&#8217;t allow the article to exist in a directory atomically.</p>
-</li>
-<li>
-<p>Gatsby - Difficult to install and is geared more towards document repository</p>
-</li>
-<li>
-<p>Antora.org - Requires GIT repositories to create a document site generator, too many unneeded features</p>
-</li>
-<li>
-<p>Vue based - Flexible but used GraphQL for access to even the filesystem, ASCIIDoc not mentioned</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_requirements">2. Requirements</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>These are the requirements for a basic utility to manage ASCIIDoctor files specifically and generate a blog automatically</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Use Blog articles as separate directories</p>
-</li>
-<li>
-<p>Use ASCIIDoctor as the primary files for articles</p>
-</li>
-<li>
-<p>Use the content of the ASCIIDoctor file to drive the indexing</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The (=) title becomes the tile of the article</p>
-</li>
-<li>
-<p>The preamble (The first paragraph of the document)</p>
-</li>
-<li>
-<p>Date from the date line of the header</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>index.html generated from index.adoc to all for template of index to be changed</p>
-</li>
-<li>
-<p>Blog order article is determined by a single text file in roo <code>order.txt</code> with a list of the directory name in the order they should appear in the blog</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Delete an article by (*) it in the <code>'order.txt</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Use a FTPSync command to help move (New/Updated) generated content into web server</p>
-</li>
-<li>
-<p>Auto generate HTML &amp; PDF if the coersponding ADOC is more than 1 day old</p>
-</li>
-<li>
-<p>Auto generate (Optional) the <code>order.txt</code> file of the sub-folder of the blog</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_prerequisites">3. Prerequisites</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Definition of Blog article file naming</p>
-<div class="ulist">
-<ul>
-<li>
-<p>readme.adoc for main document</p>
-</li>
-<li>
-<p>readme.png (Optional) for Blog article image</p>
-</li>
-<li>
-<p>ALl sub-directories in Blog article directory will be transferred except for <code>.exclude</code> folder</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Node FTPSync - To manage transfer of generated updates</p>
-</li>
-</ul>
+<p>Blog articles can be viewed by clicking on the image or the <code>View</code> link on the Blog article.</p>
 </div>
 <div class="paragraph">
-<p>&gt;&gt;&gt;&gt;&gt;
-== Web site</p>
+<p>Some Blog articles can be downloaded by clicking on the <code>Download</code> link if it exist.</p>
 </div>
-<div class="paragraph">
-<p>The web site will be generated based on the layout in the <code>index.adoc</code> template.
-This template can be modified for the page scaffolding.
-Additional content or directions could be added.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To search for something in these Blog articles press <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>f</kbd></span>
+</td>
+</tr>
+</table>
 </div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="./images/web-example.png" alt="Blog Article Web Page Example">
-</div>
-<div class="title">Figure 1. Blog Article Web Page Example</div>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_document_history">4. Document History</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Document History</caption>
+<table class="tableblock frame-"topbot grid-all stretch">
 <colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 50.0002%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Date</th>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Author</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">07/19/2019</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">V2.1b</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">JHRS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Initial version</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><a class="image" href="./Alternative%20Blogging%20Platform/readme.html" target="_blank" rel="noopener"><img src="./images/default-blog.png" alt="default blog" width="133" height="133"></a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Alternative blogging platform</strong><br>
+<b>Date: </b> 04/13/2017 - GeekMustHave is using WordPress for its blogging platfo
+rm.
+It has been a good platform and with the introduction of Jetpack the maintenance and post maintenance has become easier.
+I use ASCIIDoctor for most of my documentation and was considering using it for blogging.
+This is when I discovered there is no love for ASCIIDoctor.<br>
+<a href="./Alternative%20Blogging%20Platform/readme.html" target="_blank" rel="noopener">View</a>   <a href="./Alternative%20Blogging%20Platform/readme.PDF" target="_blank" rel="noopener">Download</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><a class="image" href="./Easier%20Tech%20Writing/readme.html" target="_blank" rel="noopener"><img src="./Easier%20Tech%20Writing/readme.png" alt="readme" width="133" height="133"></a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Writing Documentation Easier <br> Getting Started with ASCIIDoctor</strong><br>
+<b>Date: </b> 08/14/2017 - ASCIIDoctor is a markdown languages.
+It has a very extenisve syntax allowing for better technical writing.
+This file is an example of some of that syntax.
+There are links at the end of the document for more detailed references to this markdown.<br>
+<a href="./Easier%20Tech%20Writing/readme.html/readme.html" target="_blank" rel="noopener">View</a> <a href="./Easier%20Tech%20Writing/readme.pdf" target="_blank" rel="noopener">Download</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><a class="image" href="./Install%20HTTPServer%20Node/readme.html" target="_blank" rel="noopener"><img src="./Install%20HTTPServer%20Node/readme.png" alt="readme" width="133" height="133"></a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Install HTTPServer Node</strong><br>
+<b>Date: </b> 04/15/2018 - At some point in time you are going to need a HTTP server to test your JavaScript code.
+This method shows how to do this using either Python or Node.<br>
+<a href="./Install%20HTTPServer%20Node/readme.html" target="_blank" rel="noopener">View</a>  <a href="./Install%20HTTPServer%20Node/readme.pdf" target="_blank" rel="noopener">Download</a></p></td>
 </tr>
 </tbody>
 </table>
-</div>
+<div class="paragraph">
+<p>This Blog Article page was generated using ASCIIDoctor and a ADOC2Blog utility to generate static pages directly from ADOC files with no database</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 2.1b<br>
-Last updated 2019-07-19 14:35:02 -0400
+Last updated 2019-07-19 14:31:04 -0400
 </div>
 </div>
 </body>

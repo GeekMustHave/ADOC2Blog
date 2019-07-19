@@ -59,6 +59,17 @@ These are the requirements for a basic utility to manage ASCIIDoctor files speci
 * Node FTPSync - To manage transfer of generated updates
 
 
+>>>>>
+== Web site 
+
+The web site will be generated based on the layout in the `index.adoc` template.
+This template can be modified for the page scaffolding.
+Additional content or directions could be added.
+
+.Blog Article Web Page Example
+image::web-example.png[Blog Article Web Page Example, align='center']
+ 
+
 
 
 <<<<

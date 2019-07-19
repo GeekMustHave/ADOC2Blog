@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<meta name="author" content="John HR Schuster">
-<title>ASCIIDoctor to Blog Utility</title>
+<meta name="author" content="GeekMustHave">
+<title>Install basic HTTP server using NODE.js</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -432,197 +432,164 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>ASCIIDoctor to Blog Utility</h1>
+<h1>Install basic HTTP server using NODE.js</h1>
 <div class="details">
-<span id="author" class="author">John HR Schuster</span><br>
-<span id="email" class="email"><a href="mailto:John.schuster@PhoenixWorkgroup.com">John.schuster@PhoenixWorkgroup.com</a></span><br>
-<span id="revnumber">version 2.1b,</span>
-<span id="revdate">07/19/2019</span>
-<br><span id="revremark">Doco Type</span>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_introduction">1. Introduction</a></li>
-<li><a href="#_requirements">2. Requirements</a></li>
-<li><a href="#_prerequisites">3. Prerequisites</a></li>
-<li><a href="#_document_history">4. Document History</a></li>
-</ul>
+<span id="author" class="author">GeekMustHave</span><br>
+<span id="email" class="email"><a href="mailto:Geek.MustHave@PhoenixWorkgroup.com">Geek.MustHave@PhoenixWorkgroup.com</a></span><br>
+<span id="revnumber">version 1.0,</span>
+<span id="revdate">04/15/2018</span>
+<br><span id="revremark">Article</span>
 </div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Over the years I have tinkered with the idea of using ASCIIDoctor documents as the basis for a blog service.
-The Blog would be statically delivered and as damn simple as possible.</p>
+<p>At some point in time you are going to need a HTTP server to test your JavaScript code.
+This method shows how to do this using either Python or Node.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction">1. Introduction</h2>
+<h2 id="_python_method">Python method</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>I use ASCIIDoctor to do the majority of my documentation and have gotten good at it with special editor extension and snippets.</p>
+<p>A typical method is to use the Python command.</p>
 </div>
-<div class="paragraph">
-<p>I have looked at a number of Open source solutions and most of them are either too complex or difficult to implement.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Hugo - Based on <code>Go</code> and a defined file structure that doesn&#8217;t allow the article to exist in a directory atomically.</p>
-</li>
-<li>
-<p>Gatsby - Difficult to install and is geared more towards document repository</p>
-</li>
-<li>
-<p>Antora.org - Requires GIT repositories to create a document site generator, too many unneeded features</p>
-</li>
-<li>
-<p>Vue based - Flexible but used GraphQL for access to even the filesystem, ASCIIDoc not mentioned</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_requirements">2. Requirements</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>These are the requirements for a basic utility to manage ASCIIDoctor files specifically and generate a blog automatically</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Use Blog articles as separate directories</p>
-</li>
-<li>
-<p>Use ASCIIDoctor as the primary files for articles</p>
-</li>
-<li>
-<p>Use the content of the ASCIIDoctor file to drive the indexing</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The (=) title becomes the tile of the article</p>
-</li>
-<li>
-<p>The preamble (The first paragraph of the document)</p>
-</li>
-<li>
-<p>Date from the date line of the header</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>index.html generated from index.adoc to all for template of index to be changed</p>
-</li>
-<li>
-<p>Blog order article is determined by a single text file in roo <code>order.txt</code> with a list of the directory name in the order they should appear in the blog</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Delete an article by (*) it in the <code>'order.txt</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Use a FTPSync command to help move (New/Updated) generated content into web server</p>
-</li>
-<li>
-<p>Auto generate HTML &amp; PDF if the coersponding ADOC is more than 1 day old</p>
-</li>
-<li>
-<p>Auto generate (Optional) the <code>order.txt</code> file of the sub-folder of the blog</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_prerequisites">3. Prerequisites</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Definition of Blog article file naming</p>
-<div class="ulist">
-<ul>
-<li>
-<p>readme.adoc for main document</p>
-</li>
-<li>
-<p>readme.png (Optional) for Blog article image</p>
-</li>
-<li>
-<p>ALl sub-directories in Blog article directory will be transferred except for <code>.exclude</code> folder</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Node FTPSync - To manage transfer of generated updates</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>&gt;&gt;&gt;&gt;&gt;
-== Web site</p>
-</div>
-<div class="paragraph">
-<p>The web site will be generated based on the layout in the <code>index.adoc</code> template.
-This template can be modified for the page scaffolding.
-Additional content or directions could be added.</p>
-</div>
-<div class="imageblock text-center">
+<div class="literalblock">
+<div class="title">Linux Method</div>
 <div class="content">
-<img src="./images/web-example.png" alt="Blog Article Web Page Example">
+<pre>$ cd /home/somedir   &lt;--- Directory where web files are located
+$ python -m SimpleHTTPServer</pre>
 </div>
-<div class="title">Figure 1. Blog Article Web Page Example</div>
 </div>
-<div style="page-break-after: always;"></div>
+<div class="literalblock">
+<div class="title">Windows Method</div>
+<div class="content">
+<pre>C:\Users\jschust2&gt; cd \myWebFiles     &lt;----- Directory where web files are located
+C:\myWebFiles&gt; python -m SimpleHTTPServer</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This only works when you if you have Python installed.
+Some Windows editions don&#8217;t have it.
+Another method is to use NODE.JS.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+I didn&#8217;t want to install Python on my Windows system(s) and was planning to use NODE.JS anyway, so lets install it.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_document_history">4. Document History</h2>
+<h2 id="_node_js_method">Node.js method</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Document History</caption>
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 50.0002%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Date</th>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Author</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">07/19/2019</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">V2.1b</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">JHRS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Initial version</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>I would suggest using the <a href="https://nodejs.org/en/">Node web site</a> to install the NODE.js.</p>
+</div>
+<div class="imageblock text-left">
+<div class="content">
+<img src="images/nodeweb.png" alt="Node">
+</div>
+<div class="title">Figure 1. Node Web Site</div>
+</div>
+<div class="paragraph">
+<p>For simplicity sake just take all of the defaults</p>
+</div>
+<div class="imageblock text-left">
+<div class="content">
+<img src="images/nodejs_install.png" alt="Install">
+</div>
+<div class="title">Figure 2. Node.JS Install</div>
+</div>
+<div class="sect2">
+<h3 id="_install_the_node_http_server_component">Install the Node HTTP server component</h3>
+<div class="paragraph">
+<p>Run this command, from the Windows command line,  to install the HTTP server.  It uses the NPM package installer.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>npm install http-server -g</pre>
+</div>
+</div>
+<div class="imageblock text-left">
+<div class="content">
+<img src="images/install_http_server.png" alt="HTTP server">
+</div>
+<div class="title">Figure 3. Install HTTP Server nodule</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_start_the_http_service">Start the HTTP service</h3>
+<div class="paragraph">
+<p>Run this command, from the Windows command line, to start the HTTP server.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http-server</pre>
+</div>
+</div>
+<div class="imageblock text-left">
+<div class="content">
+<img src="images/start_http_server.png" alt="Start Server">
+</div>
+<div class="title">Figure 4. Start HTTP Server</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_view_your_web_files_via_the_browser">View your web files via the browser</h3>
+<div class="paragraph">
+<p>Start up your favorite browser, Chrome in my case, and enter the following URL.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://localhost:8080</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Do some work in the browser with your web pages.  Then take a look at the Window running the HTTP service.</p>
+</div>
+<div class="imageblock text-left">
+<div class="content">
+<img src="images/server_after_request.png" alt="Processing">
+</div>
+<div class="title">Figure 5. Server processing requests</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stop_the_server">Stop the server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To stop the HTTP server press the <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>C</kbd></span> keys.</p>
+</div>
+<div class="imageblock text-left">
+<div class="content">
+<img src="images/server_stopped.png" alt="Stop Server">
+</div>
+<div class="title">Figure 6. Stop the server</div>
+</div>
+<div class="paragraph">
+<p>Special Thanks to <a href="http://www.jhh.me/blog/2012/12/24/setting-up-http-server-on-windows-with-node-js/">JHH Blog</a> for the tip.</p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 2.1b<br>
-Last updated 2019-07-19 14:35:02 -0400
+Version 1.0<br>
+Last updated 2019-07-19 14:28:10 -0400
 </div>
 </div>
 </body>

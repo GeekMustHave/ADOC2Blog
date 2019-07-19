@@ -1,4 +1,4 @@
-= Alternative blogging platform 
+= Alternative blogging platform pass:<br> Hugo Done well
 John HR Schuster <john.schuster@PhoenixWorkgroup.com>
 V2.1b, 04/03/2017: Work notes
 :toc: left

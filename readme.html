@@ -438,8 +438,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">John HR Schuster</span><br>
 <span id="email" class="email"><a href="mailto:John.schuster@PhoenixWorkgroup.com">John.schuster@PhoenixWorkgroup.com</a></span><br>
-<span id="revnumber">version 2.1b,</span>
-<span id="revdate">07/19/2019</span>
+<span id="revnumber">version 2.1c,</span>
+<span id="revdate">07/22/2019</span>
 <br><span id="revremark">Doco Type</span>
 </div>
 <div id="toc" class="toc2">
@@ -449,9 +449,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_requirements">2. Requirements</a></li>
 <li><a href="#_prerequisites">3. Prerequisites</a></li>
 <li><a href="#_folder_file_structure">4. Folder / File Structure</a></li>
-<li><a href="#_oder_txt_file">5. oder.txt file</a></li>
-<li><a href="#_web_site">6. Web site</a></li>
-<li><a href="#_document_history">7. Document History</a></li>
+<li><a href="#_order_txt_file">5. order.txt file</a></li>
+<li><a href="#_business_rules">6. Business Rules</a></li>
+<li><a href="#_web_site">7. Web site</a></li>
+<li><a href="#_developer_notes">8. Developer notes</a></li>
+<li><a href="#_document_history">9. Document History</a></li>
 </ul>
 </div>
 </div>
@@ -596,7 +598,7 @@ The Blog would be statically delivered and as damn simple as possible.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_oder_txt_file">5. oder.txt file</h2>
+<h2 id="_order_txt_file">5. order.txt file</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is a simple text file with the names of the Blog Article folders to be included in the generated Blog Article web site.</p>
@@ -614,11 +616,35 @@ In this example <code>New dog grooming methods</code> will not be in the generat
 </div>
 <div class="title">Figure 2. Example <code>order.txt</code> file</div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_business_rules">6. Business Rules</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>'order.txt' file must exist, fatal if it doesn&#8217;t</p>
+</li>
+<li>
+<p>Directory listed in <code>order.txt</code> is missing</p>
+</li>
+<li>
+<p>Missing <code>readme.adoc</code> file in the directory being processed - Warning directory skipped</p>
+</li>
+<li>
+<p>Missing title line (= title) warning, use directory name</p>
+</li>
+<li>
+<p>Missing date (v2.1,07/21/2019:type) warning, use todays date</p>
+</li>
+</ol>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_web_site">6. Web site</h2>
+<h2 id="_web_site">7. Web site</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The web site will be generated based on the layout in the <code>index.adoc</code> template.
@@ -631,11 +657,39 @@ Additional content or directions could be added.</p>
 </div>
 <div class="title">Figure 3. Blog Article Web Page Example</div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_developer_notes">8. Developer notes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Standard NPM Init</p>
+</li>
+<li>
+<p>Other NPM Libraries</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Chalk - Color display in terminal window</p>
+</li>
+<li>
+<p>Figlet - Large ASCII characters</p>
+</li>
+<li>
+<p>Clear - Clear the terminal screen</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_document_history">7. Document History</h2>
+<h2 id="_document_history">9. Document History</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Document History</caption>
@@ -655,6 +709,12 @@ Additional content or directions could be added.</p>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">07/22/2019</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V2.1c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JHRS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Business rules, thanks Deb!!</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">07/19/2019</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">V2.1b</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JHRS</p></td>
@@ -667,8 +727,8 @@ Additional content or directions could be added.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 2.1b<br>
-Last updated 2019-07-19 15:07:02 -0400
+Version 2.1c<br>
+Last updated 2019-07-22 12:55:45 -0400
 </div>
 </div>
 </body>

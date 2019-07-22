@@ -1,6 +1,6 @@
 = ASCIIDoctor to Blog Utility
 John Schuster <John.schuster@PhoenixWorkgroup.com>
-v2.1b, 07/19/2019: Doco Type
+v2.1c, 07/22/2019: Doco Type
 :Author: John HR Schuster
 :Company: Phoenix Learning Labs
 :toc: left
@@ -89,7 +89,7 @@ image::order-txt.png[Example `order.txt` file, align='center']
 . Missing `readme.adoc` file in the directory being processed - Warning directory skipped
 . Missing title line (= title) warning, use directory name
 . Missing date (v2.1,07/21/2019:type) warning, use todays date
- 
+
 <<<<
 
 == Web site 
@@ -122,6 +122,7 @@ image::web-example.png[Blog Article Web Page Example, align='center']
 [cols='2,2,2,6' options='header']
 |===
 | Date  | Version | Author | Description
+| 07/22/2019 | V2.1c | JHRS | Business rules, thanks Deb!!
 | 07/19/2019 | V2.1b | JHRS |  Initial version
 |===
 

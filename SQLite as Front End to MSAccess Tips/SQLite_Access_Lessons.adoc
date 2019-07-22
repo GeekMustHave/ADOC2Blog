@@ -1,0 +1,87 @@
+= Phoenix Learning Labs pass:q[<br>]Using SQLite with Microsoft Access pass:q[<br>]Lessons Learned
+John HR Schuster <john.schuster@PhoenixWorkgroup.com>
+V2.1b, 04/05/2017: Developer Notes
+:toc: left
+:toclevels: 4:
+:imagesdir: ./images
+:pagenums:
+:experimental:
+:source-hightlighter: highlight.js
+:icons: font
+
+////
+toc - Table of Contents, HTML display on left of page
+        on PDF include as page after title page
+toclevels: 4 - By default only two levels are shown, this makes it show all four levels we have in this document        
+imagesdir - About where this ADOC file, where are the image files held, "images" directly under the root document folder
+pagenums - Provide page numbers for PDF generated documents
+experimental - Used to allow keyboard shortcuts like kdb:[ctrl + C]
+source-highlighter - Which lib to use, highlight.js doesn't require any install uses CDN 
+////
+
+The Back Up and Security (BUS) system is used to help track all the various systems, back up status, backup scenarios and security.
+It will be a throw together system initially to allow to eliminate the spreadsheet.
+It will also be an experiment in using SQLite as the back-end for a Microsoft Access 2016 front end.
+
+
+
+////
+Cols 2,1,1,5 are relative sizes of columns the 1 columns are the author initials and the version number
+////
+.Document Revision History
+[ cols="2,1,1,5" options="header"]
+|===
+| Date | Version | Author | Description 
+| 04/05/2017 12:40 PM  | 2.1b | JHRS | Initial version of document created
+|===
+
+== Database .Net DBA tool
+
+My tool of choice for maintaining any SQL database, including SQLite,  is the Database .NET program from http://fishcodelib.com/Database.htm[ Fish-Lib].
+It is only available for the Windows environment.  
+Database .Net covers any SQL database I currently use including Teradata. 
+Database .Net has a command line interface that allows it to be used in PowerShell script to perform standard DBA maintenance tasks.
+
+.Database .Net DBA tool for SQLite
+image::databasenet.png[Database .Net DBA tool, align='center']
+
+It is possible to have Database .Net open and doing work and have the MSAccess frontend open doing work.  
+Just don't attempt to update data in objects you are working on the schema.
+
+NOTE: Any schema changes in the SQLite database schema will require a relink of the tables in the MSAccess front end.
+
+Use the `Linked Table Manager` from the main ribbon and just refresh all of the linked tables.
+ 
+.Linked Table Manager
+image::linkedtables.png[Refresh Linked Tables, align='center']
+ 
+
+
+== Write Conflict issues
+
+=== Boolean Default
+
+Initially one of the tables (Points) was experiencing a `write conflict` error any time something was updated.
+
+Issue appeared to be that one of the columns in this table was defined as `boolean` and had no default set up.
+ 
+.Boolean default
+image::booleandefault.png[Set Boolean default, align='center']
+
+=== ODBC DSN `Sync Mode` setting
+
+Second issue was that the ODBC DSN configuration had one setting incorrect.
+
+The `Sync Mode` setting needs to be set to `Normal`
+
+ 
+.SQLite ODBC DSN configuration
+image::syncmode.png[ODBC DSN Setting, align='center']
+
+
+== Views are for Viewing
+
+In many SQL based application I have created One-To-One views of the tables.
+These view can only be `viewed`, no editing is allowed.
+
+

@@ -70,7 +70,7 @@ Each Blog Article folder is `Atomic` which means all of the assets for that arti
 .Folder / File Structure
 image::adoc2blog-structure.png[Folder / File Structure, align='center']
  
-== oder.txt file
+== order.txt file
 
 This is a simple text file with the names of the Blog Article folders to be included in the generated Blog Article web site.
 
@@ -82,11 +82,14 @@ In this example `New dog grooming methods` will not be in the generated web site
 .Example `order.txt` file   
 image::order-txt.png[Example `order.txt` file, align='center'] 
 
+== Business Rules
 
+. 'order.txt' file must exist, fatal if it doesn't
+. Directory listed in `order.txt` is missing 
+. Missing `readme.adoc` file in the directory being processed - Warning directory skipped
+. Missing title line (= title) warning, use directory name
+. Missing date (v2.1,07/21/2019:type) warning, use todays date
  
-
-
-
 <<<<
 
 == Web site 
@@ -98,6 +101,17 @@ Additional content or directions could be added.
 .Blog Article Web Page Example
 image::web-example.png[Blog Article Web Page Example, align='center']
  
+
+== Developer notes
+
+* Standard NPM Init
+
+* Other NPM Libraries
+
+** Chalk - Color display in terminal window
+** Figlet - Large ASCII characters
+** Clear - Clear the terminal screen
+
 
 
 
